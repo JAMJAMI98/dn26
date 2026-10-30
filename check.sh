@@ -50,4 +50,4 @@ sec "11. codex commands / preset MCP"
 if command -v codex >/dev/null; then codex --help 2>&1 | head -40; echo "--- mcp list ---"; codex mcp list 2>&1 | head -20; fi
 
 sec "done"
-echo "next: run preview server ->  python3 -m http.server 8000 --bind 0.0.0.0"
+echo "next: run preview server ->  python3 -m http.server 3000 --bind 0.0.0.0"

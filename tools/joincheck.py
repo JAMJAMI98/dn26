@@ -2,8 +2,8 @@
 """Join / ID-mapping checker (standard library only).
 
 usage:
-  python3 ~/dn/tools/joincheck.py left.csv:equip right.csv:equip_id [--alias right.csv:aliases] [--sep ";"]
-  python3 ~/dn/tools/joincheck.py --demo
+  python3 /tmp/dn/tools/joincheck.py left.csv:equip right.csv:equip_id [--alias right.csv:aliases] [--sep ";"]
+  python3 /tmp/dn/tools/joincheck.py --demo
 
 Normalizes IDs (case, '-', '_', spaces, leading zeros inside numbers), then reports:
 matched / unmatched counts, unmatched examples, ambiguous mappings (one left value

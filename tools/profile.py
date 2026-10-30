@@ -2,9 +2,9 @@
 """Read-only CSV profiler (standard library only).
 
 usage:
-  python3 ~/dn/tools/profile.py data/*.csv            # summary per file
-  python3 ~/dn/tools/profile.py data/a.csv --out outputs/profile.md
-  python3 ~/dn/tools/profile.py --demo
+  python3 /tmp/dn/tools/profile.py data/*.csv            # summary per file
+  python3 /tmp/dn/tools/profile.py data/a.csv --out outputs/profile.md
+  python3 /tmp/dn/tools/profile.py --demo
 
 Reports: rows/cols, empty rate, exact duplicate rows, key candidates,
 time-like columns (format and timezone marker), numeric min/median/max with

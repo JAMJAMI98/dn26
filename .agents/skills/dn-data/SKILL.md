@@ -6,9 +6,9 @@ description: 데이터 파일을 처음 열 때, 여러 파일을 합치거나 �
 # 데이터 점검 (원본은 읽기만)
 
 ## 0. 도구부터
-- `python3 ~/dn/tools/profile.py data/*.csv --out outputs/profile.md` (없으면 아래 항목을 직접 스크립트로)
-- 조인 키가 있으면 `python3 ~/dn/tools/joincheck.py a.csv:열 b.csv:열 [--alias b.csv:별칭열]`로 매칭 실패 0을 확인한다
-- 제조·공정 데이터면 `~/dn/templates/DOMAIN.md`를 복사해 `DOMAIN.md`로 쓰고, 4절 원인 추적 절차를 따른다
+- `python3 /tmp/dn/tools/profile.py data/*.csv --out outputs/profile.md` (없으면 아래 항목을 직접 스크립트로)
+- 조인 키가 있으면 `python3 /tmp/dn/tools/joincheck.py a.csv:열 b.csv:열 [--alias b.csv:별칭열]`로 매칭 실패 0을 확인한다
+- 제조·공정 데이터면 `/tmp/dn/templates/DOMAIN.md`를 복사해 `DOMAIN.md`로 쓰고, 4절 원인 추적 절차를 따른다
 
 ## 1. 프로파일 (스크립트 하나, 출력 30줄 이내)
 - 파일별 행·열 수, 타입, 앞 3행

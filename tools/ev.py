@@ -2,8 +2,8 @@
 """Evidence runner: run a check command, save the log, append a V entry to LOG.md.
 
 usage:
-  python3 ~/dn/tools/ev.py "pytest -q" --claim "핵심 계산이 손계산과 일치" [--src "src/calc.py:12"] [--log LOG.md]
-  python3 ~/dn/tools/ev.py --demo
+  python3 /tmp/dn/tools/ev.py "pytest -q" --claim "핵심 계산이 손계산과 일치" [--src "src/calc.py:12"] [--log LOG.md]
+  python3 /tmp/dn/tools/ev.py --demo
 
 - Status is PASS only when the command exits 0. Otherwise FAIL.
 - Records time, git commit (and whether the tree was dirty), command, exit code, log path.

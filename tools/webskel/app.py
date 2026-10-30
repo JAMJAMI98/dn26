@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Minimal web skeleton (standard library only). Copy, then replace compute().
 
-run:   PORT=8000 python3 app.py        (binds 0.0.0.0 for the IDE Browser preview)
+run:   PORT=3000 python3 app.py        (binds 0.0.0.0 for the IDE Browser preview)
 test:  python3 test_app.py
 
 Design choices (explainable):
@@ -49,7 +49,7 @@ class H(BaseHTTPRequestHandler):
 
 
 def serve(port=None):
-    port = int(port or os.environ.get("PORT", "8000"))
+    port = int(port or os.environ.get("PORT", "3000"))
     srv = ThreadingHTTPServer(("0.0.0.0", port), H)
     return srv
 
