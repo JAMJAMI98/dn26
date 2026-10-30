@@ -57,7 +57,7 @@ AGENTS.md 읽고 세션 지침으로 써. 종료 13:00, 첫 완주 11:05, 제출
 - Codex 안의 네트워크 명령(git clone·pip·npm 설치 등)은 샌드박스가 **처음엔 막는다**(exit 128 등) → Codex가 승인을 요청 → 승인하면 된다. 실패 메시지에 당황하지 않는다 (체험 확인). 서버 띄우기도 승인이 필요할 수 있다
 - 승인 창: 반복되는 안전한 명령(python3, pytest, curl localhost, git add/commit)은 창에서 **"이 세션 동안 다시 묻지 않기"** 쪽을 고른다. 홈 밖 쓰기·외부 전송·삭제는 내용을 읽고 판단. 모드는 체험 기본(Workspace, Ask for approval) 유지, 승인·샌드박스 완전 끄기는 하지 않는다
 - 시작 시 맨 아래 상태 줄에 기본 모델이 보인다 (체험: 권장 1순위 모델이 기본)
-- 과제 스킬 만들기 (11:30 전까지, 10분 이내): `$skill-creator 방금 반복한 [절차]를 이 과제 전용 스킬로 .agents/skills/에 만들어. 이 과제에서 확인한 규칙과 확인 명령만 넣고, 만든 이유를 LOG.md D 항목에 남겨.` · `$skill-creator`가 없으면: `.agents/skills/<이름>/SKILL.md 를 직접 써. frontmatter는 name, description 두 줄, 본문은 절차 5~10줄.`
+- 과제 스킬 만들기 (11:30 전까지, 10분 이내): `$skill-creator 방금 반복한 [절차]를 이 과제 전용 스킬로 .agents/skills/에 만들어. 이 과제에서 확인한 규칙과 확인 명령만 넣고, 만든 이유를 LOG.md D 항목에 남기고, 그 스킬 폴더만 git add -f 로 커밋해.` (`.agents/`는 git 제외라 `-f`가 없으면 기록에 안 남는다) · `$skill-creator`가 없으면: `.agents/skills/<이름>/SKILL.md 를 직접 써. frontmatter는 name, description 두 줄, 본문은 절차 5~10줄.`
 - 단순 작업(정리, 요약, 반복 코드)은 `/model`로 가벼운 모델에 맡기고 다시 기본 모델로.
 
 ## 4-1. 도구 (각각 --demo로 자체 점검)
