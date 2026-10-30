@@ -4,11 +4,11 @@
 
 ## 1. 시작 (10:00, 시작 절차가 끝난 뒤)
 ```bash
-git clone https://github.com/JAMJAMI98/dn26.git ~/dn && bash ~/dn/setup.sh ~/workspace
+git clone https://github.com/JAMJAMI98/dn26.git ~/dn && bash ~/dn/setup.sh "$(pwd)"
 codex
 ```
 - **반드시 홈(~/dn)에 받는다.** 작업 폴더에 받으면 키트가 제출물에 섞인다.
-- workspace 경로가 다르면 `pwd`로 확인해서 바꾼다.
+- **과제 파일이 있는 폴더에서** 친다 (`ls`로 README가 보이는 곳). `$(pwd)`가 그 폴더라 AGENTS.md가 거기 놓이고, codex도 그 폴더에서 실행한다.
 - 붙여넣기가 막히면 직접 친다. 타이핑이 길면 Codex에게 말로 시킨다:
   `https://github.com/JAMJAMI98/dn26.git 를 ~/dn 에 clone하고 bash ~/dn/setup.sh 를 현재 작업 폴더 기준으로 실행해. 작업 폴더 안에는 clone하지 마.`
 - Codex 안: `/status` → `/model` → **안내받은 권장 1순위 모델** (금지 모델 쓰지 않기, 업데이트 금지)
