@@ -27,8 +27,11 @@ else
   echo "rules: $WORK/AGENTS.md"
 fi
 mkdir -p "$WORK/.codex/agents"
-if [ -e "$WORK/.codex/agents/verifier.toml" ]; then echo "verifier agent exists -> skipped"
-else cp "$KIT/.codex/agents/verifier.toml" "$WORK/.codex/agents/verifier.toml"; echo "agent: verifier (works only in a trusted folder)"; fi
+for f in "$KIT"/.codex/agents/*.toml; do
+  n="$(basename "$f")"
+  if [ -e "$WORK/.codex/agents/$n" ]; then echo "agent $n exists -> skipped"
+  else cp "$f" "$WORK/.codex/agents/$n"; echo "agent: ${n%.toml} (works only in a trusted folder)"; fi
+done
 echo "tools: python3 ~/dn/tools/{profile,joincheck,ev,mask}.py --demo   |  web skeleton: ~/dn/tools/webskel"
 echo "done. restart codex, then check skills with /skills (or \$dn-kickoff)."
 

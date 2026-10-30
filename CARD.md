@@ -52,6 +52,7 @@ AGENTS.md 읽고 세션 지침으로 써. 종료 13:00, 첫 완주 11:05, 제출
 - 민감정보 가리기: `mkdir -p app && cp ~/dn/tools/mask.py app/ && python3 app/mask.py --demo` (모듈: `from mask import mask_text, unmask_text`)
 - 웹 뼈대: `cp -r ~/dn/tools/webskel app && git add app && git commit -m "chore: 웹 뼈대 복사(dn webskel)"` → 그다음 과제에 맞게 수정
 - 도메인 틀: `cp ~/dn/templates/DOMAIN.md DOMAIN.md`
+- 도메인 리뷰(반복 중 1회): "reviewer 서브에이전트로 PLAN.md 기준 src/ 도메인 오류 찾아줘"
 - 독립 검증: "verifier 서브에이전트로 다음 항목을 원자료에서 다시 계산해: …" (안 되면 dn-verify 5절의 새 세션 리뷰)
 
 ## 5. 키트 없이 시작할 때 (clone 실패)
