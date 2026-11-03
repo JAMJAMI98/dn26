@@ -1,0 +1,13 @@
+# allow-list: only what the image needs
+*
+!backend/pyproject.toml
+!backend/app
+!frontend/package.json
+!frontend/package-lock.json
+!frontend/index.html
+!frontend/tsconfig.json
+!frontend/vite.config.ts
+!frontend/src
+!data
+**/__pycache__
+**/node_modules
