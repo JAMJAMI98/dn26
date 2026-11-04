@@ -1,5 +1,5 @@
 // Read-only SVG graph. layout="sequence": nodes left->right in given order, wrapped into rows (no overlap).
-// layout="coords": nodes placed by x/y (e.g. lon/lat) scaled into the box. Labels never show raw coordinates.
+// layout="coords": nodes placed by x/y (data coordinates) scaled into the box. Labels never show raw coordinates.
 export type GraphNode = { id: string; label: string; sub?: string; x?: number; y?: number; kind?: "start" | "end" | "normal" | "highlight" };
 export type GraphEdge = { from: string; to: string; label?: string };
 

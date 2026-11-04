@@ -10,7 +10,7 @@
 
 ## 작은 디자인 시스템 (shared/ui)
 - 토큰: 색·간격·글자 크기·둥글기. 색을 바꿀 때는 토큰 값만 바꾼다.
-- 기본 부품: Layout, Button, Table(정렬, 숫자 오른쪽 정렬), Card(지표), Form 필드(검증 메시지), Badge, ConfirmDialog, 상태 4종(Empty·Loading·ErrorBox·Result), Graph(SVG 노드·엣지·라벨 겹침 회피).
+- 기본 부품: Layout, Button, Table(정렬, 숫자 오른쪽 정렬), Card(지표), Form 필드(검증 메시지), Badge, ConfirmDialog, 상태 4종(Empty·Loading·ErrorBox·Result), Graph(SVG 노드·엣지·라벨 겹침 회피), LineChart(시간·순서 축 + 기준선 + 표시점), BarChart(그룹 막대), GridMap(격자 칸 상태색 + 표시점). A안은 `shared/ui/Chart.tsx`·`GridMap.tsx`, B안은 `shared/ui/charts.js`(같은 인자).
 - 업무 부품은 기본 부품만 조합한다. 개별 인라인 스타일·새 색상을 만들지 않는다.
 
 ## 화면 명세가 먼저

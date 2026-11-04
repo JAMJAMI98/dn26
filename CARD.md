@@ -11,7 +11,7 @@ END=13:00 bash /tmp/dn/setup.sh           # 13:00 자리에 안내받은 종료 
 codex
 ```
 - clone은 터미널에서 직접(Codex에게 시키면 Username 오류). Username을 물으면 주소 오타
-- Codex 안: `/status` → `/model`(권장 1순위, 추론 high) → `/skills`에서 dn- 13개 확인(꺼져 있으면 Enable)
+- Codex 안: `/status` → `/model`(권장 1순위, 추론 high) → `/skills`에서 dn- 14개 확인(꺼져 있으면 Enable)
 - 보안 스킬(선택): `$skill-installer security-best-practices` → 승인 → `/quit` → `codex`
 - 승인 창: python3·pytest·curl localhost·git add/commit·npm·pip은 "세션 동안 다시 묻지 않기". .git 쓰기도 세션 동안 허용
 - 승인을 실수로 거절했으면: `방금 거절은 실수야. 같은 명령을 다시 실행해.`
@@ -79,6 +79,7 @@ codex
 ## 6. 게이트에서 내가 할 말 (예)
 - G1: `01_brief 확인했어. 성공 기준 2번은 ○○로 바꿔. 나머지 OK.`
 - G2: `제약: ○○ ≤ N은 반드시, △△는 지표로. 방법은 추천안. 화면 블록 OK. docs/05에 반영하고 $dn-build 로 첫 완주.`
+- G2·G3에서 한 번: `키트 방법 말고 이 과제만 놓고 처음부터 생각하면 더 나은 방법이 있어? 장단점 비교만.`
 - G3: `두 역할 확인했어. 개선 1) … 2) …만 해.`
 - G4: `기능 동결. $dn-verify 시작.`
 - 게이트마다 AI가 내는 확인 질문에 **내 말로 한 줄** 답한다(대화 기록도 채점되고, 그대로 후속 문답 연습이 된다)
