@@ -40,7 +40,17 @@ def init_db(settings: Settings) -> None:
     from app.infrastructure import models  # noqa: F401  (register tables)
 
     Base.metadata.create_all(_engine)
+    _release_stale_jobs()
     _seed_users(settings)
+
+
+def _release_stale_jobs() -> None:
+    """A server restart kills running work: free the lock so the next request is not stuck at 409."""
+    from app.infrastructure.models import Job
+
+    with SessionLocal() as db:
+        db.query(Job).filter(Job.status == "running").update({"status": "failed", "error": "서버 재시작으로 중단됨"})
+        db.commit()
 
 
 def _seed_users(settings: Settings) -> None:

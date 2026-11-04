@@ -1,9 +1,10 @@
 PY ?= python3
+PIP_FLAGS ?=
 
 .PHONY: setup build run test verify experiment
 
 setup:
-	cd backend && $(PY) -m pip install -e ".[dev]"
+	cd backend && $(PY) -m pip install $(PIP_FLAGS) -e ".[dev]"
 	cd frontend && (npm ci || npm install)
 
 build:

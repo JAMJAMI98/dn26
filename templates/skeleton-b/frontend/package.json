@@ -1,0 +1,6 @@
+{
+  "name": "frontend",
+  "private": true,
+  "type": "module",
+  "description": "B안: no dependencies, no build. package.json only marks .js files as ES modules for node --check."
+}

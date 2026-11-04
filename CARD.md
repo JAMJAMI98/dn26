@@ -6,7 +6,7 @@
 ```bash
 pwd; ls                                   # README가 보이는 과제 폴더인지
 cat ~/.codex/AGENTS.md                    # 플랫폼 지침 읽기만
-git clone https://github.com/JAMJAMI98/dn26.git /tmp/dn
+rm -rf /tmp/dn; git clone https://github.com/JAMJAMI98/dn26.git /tmp/dn
 END=13:00 bash /tmp/dn/setup.sh           # 13:00 자리에 안내받은 종료 시각
 codex
 ```
@@ -43,8 +43,8 @@ codex
 | 75 | | | **G3** 화면 직접 확인, 개선 1~2개 고르기 |
 | 75–125 | 개선 루프 | `$dn-data` ③ 결과 분석 → 다음 개선 대상 | **3차 질문(결과 확인 1개)**, 코드 읽고 08 카드 |
 | 125 | | | **G4** 기능 동결 |
-| 125–160 | `$dn-verify` | 독립 재계산 | 두 역할 화면 클릭 |
-| 160 | 최종 커밋 + `$dn-wrap` | 문서 초안 | |
+| 125–155 | `$dn-verify` | 독립 재계산, `$dn-wrap` 1·2절 문서 초안(HOW_TO_RUN·AI_COLLABORATION·docs/08) | 두 역할 화면 클릭 |
+| 155–160 | `$dn-wrap` 3·4절 점검 → **최종 커밋** | | |
 | 165 | | | **G5** docs/08 읽기 |
 | 170 | | | 제출(9절 순서) |
 

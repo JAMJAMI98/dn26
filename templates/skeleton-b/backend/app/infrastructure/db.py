@@ -55,6 +55,8 @@ def ping() -> bool:
 def init_db(settings: Settings) -> None:
     with connect() as c:
         c.executescript(SCHEMA)
+        # a server restart kills running work: free the lock so the next request is not stuck at 409
+        c.execute("UPDATE jobs SET status = 'failed', error = '서버 재시작으로 중단됨' WHERE status = 'running'")
     _seed_users(settings)
 
 

@@ -20,6 +20,15 @@ class JobLockTest(unittest.TestCase):
             threading.Event().wait(0.05)
         self.assertEqual(jobs.get(first)["status"], "done")
 
+    def test_restart_releases_stale_lock(self):
+        from app.infrastructure import db
+        from tests.helpers import client as c
+        with db.connect() as conn:
+            conn.execute("INSERT INTO jobs (kind, status) VALUES ('stale-test', 'running')")
+        db.init_db(c.app.settings)  # what happens at server start
+        job_id = jobs.start("stale-test", lambda: {"ok": True}, background=False)
+        self.assertEqual(jobs.get(job_id)["status"], "done")
+
     def test_failed_job_hides_internals(self):
         def boom():
             raise RuntimeError("secret path /etc/x")

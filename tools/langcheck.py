@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Find non-Korean CJK characters (Japanese kana, CJK ideographs, full-width 。) mixed into Korean docs/UI text.
 
-usage:  python3 langcheck.py [paths...]   (default: *.md docs/ frontend/src backend/app)
+usage:  python3 langcheck.py [paths...]   (default: *.md except README, docs/ frontend/src backend/app)
         python3 langcheck.py --demo
 exit:   0 clean, 1 found
 Skips: node_modules, .git, dist, docs/evidence, data/provided.
@@ -47,7 +47,7 @@ def main(argv):
         ok = len(h) == 1 and "bad.md:1" in h[0]
         print("[demo]", "PASS" if ok else f"FAIL {h}")
         return 0 if ok else 1
-    paths = argv[1:] or [p for p in ["docs", "frontend/src", "backend/app"] if os.path.exists(p)] + [f for f in os.listdir(".") if f.endswith(".md")]
+    paths = argv[1:] or [p for p in ["docs", "frontend/src", "backend/app"] if os.path.exists(p)] + [f for f in os.listdir(".") if f.endswith(".md") and f.lower() not in ("readme.md", "readme.en.md")]  # task README is never edited
     hits = scan(paths)
     for h in hits[:50]:
         print(h)

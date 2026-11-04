@@ -64,7 +64,7 @@ export function ConfirmDialog(message, { confirmLabel = "확인", danger = false
 }
 
 /**
- * Graph({nodes:[{id,x,y,label}], edges:[{from,to,label}], width, height}) — simple SVG for floor plans / routes.
+ * Graph({nodes:[{id,x,y,label}], edges:[{from,to,label}], width, height}) — simple SVG for node-edge diagrams.
  * Coordinates are data units; they are scaled to fit.
  */
 export function Graph({ nodes, edges = [], width = 640, height = 360, pad = 24 }) {

@@ -5,18 +5,19 @@ description: 시작 직후 작업 폴더에 서비스 골격(폴더·서버·인
 # 골격 적용 (+10~30분, 창 A). 도메인 코드는 0줄, 과제가 정한 것이 있으면 그것이 우선
 
 ## 0. 선택 (최대 5분, 복사 전에 정한다)
-- `python3 -c "import fastapi,uvicorn"`; 없으면 `pip install fastapi "uvicorn[standard]" pydantic-settings sqlalchemy httpx pytest` (승인). `npm view vite version` (승인).
+- `python3 -c "import fastapi,uvicorn"`; 없으면 `pip install fastapi "uvicorn[standard]" pydantic-settings sqlalchemy httpx pytest` (승인). "externally-managed-environment"로 거절되면 같은 명령에 `--user` → 그래도 안 되면 `--break-system-packages`로 한 번씩만 다시 시도(이 경우 `make setup PIP_FLAGS=…`도 같은 옵션). `npm view vite version` (승인).
 - 둘 다 되면 **A안**(FastAPI + React/TS/Vite). 하나라도 5분 안에 안 되면 **B안**(표준 라이브러리 + 바닐라 JS, 설치 0). 화면 없는 과제면 frontend 생략. 선택과 이유를 LOG D에.
 - 두 골격은 **폴더 구조·API·오류 형식·인증·역할·작업 잠금·화면 부품 이름이 같다.** 그래서 이후 스킬·docs·지시는 A/B 상관없이 그대로다. 다른 것은 명령뿐: A `make setup`·`make test`(pytest + tsc), B `make test`(unittest + node --check), 빌드 없음.
 - git: `git config user.name Codex; git config user.email codex@localhost`(이 저장소만). .git 쓰기 승인 창은 "세션 동안 허용".
 
 ## 1. 골격 복사 (검증된 범용 코드, 도메인 코드 0줄)
-- A안: `rsync -a --ignore-existing /tmp/dn/templates/skeleton-a/ ./ 2>/dev/null || cp -rn /tmp/dn/templates/skeleton-a/. ./` → `rm -f VERIFY.md` → `make setup`
+- A안: `rsync -a --ignore-existing /tmp/dn/templates/skeleton-a/ ./ 2>/dev/null || cp -rn /tmp/dn/templates/skeleton-a/. ./` → `make setup`
 - B안: `rsync -a --ignore-existing /tmp/dn/templates/skeleton-b/ ./ 2>/dev/null || cp -rn /tmp/dn/templates/skeleton-b/. ./` → `make setup`(설치 없음, .env만 만든다)
 - (과제 파일은 덮어쓰지 않는다. cp의 -n 경고 문구는 무시)
+- **복사 직후 .gitignore 확인**: 과제에 .gitignore가 이미 있으면 골격 것이 안 깔린다. `.env` `runtime/` `backend/runtime/` `__pycache__/` `node_modules/` `frontend/dist/` 줄이 없으면 추가하고 `git status --short --ignored | grep -E "env|runtime"`로 무시되는지 본다(초기 비밀번호 파일이 커밋되면 안 된다).
 - A를 복사한 뒤 B로 바꾸게 되면(도메인 코드를 쓰기 전에만): `rm -rf backend frontend Makefile Dockerfile .dockerignore` 후 B 복사.
 - `cp /tmp/dn/templates/sub/backend.AGENTS.md backend/AGENTS.md`, frontend도 같이. docs/·PLAN.md는 setup이 이미 깔았다.
-- 커밋 메시지에 출처를 밝힌다: `chore: 공개 키트 골격 적용(A안|B안, 인증·작업·배포, 도메인 코드 없음)`. HOW_TO_RUN에도 한 줄(업무 로직은 이번 과제에서 작성).
+- 커밋 메시지에 출처를 밝힌다: `chore: 공개 키트 골격 적용(github.com/JAMJAMI98/dn26 skeleton-a|b, 인증·작업·배포, 도메인 코드 없음)`. HOW_TO_RUN에도 한 줄(업무 로직은 이번 과제에서 작성).
 - 아래 2~4절은 골격의 명세다(키트에 골격이 없을 때 이대로 만든다). 골격이 있으면 5절 완료 기준만 확인하고 커밋.
 
 ## 2. backend (A안)
