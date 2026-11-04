@@ -11,7 +11,7 @@ END=13:00 bash /tmp/dn/setup.sh           # 13:00 자리에 안내받은 종료 
 codex
 ```
 - clone은 터미널에서 직접(Codex에게 시키면 Username 오류). Username을 물으면 주소 오타
-- Codex 안: `/status` → `/model`(권장 1순위, 추론 high) → `/skills`에서 dn- 12개 확인(꺼져 있으면 Enable)
+- Codex 안: `/status` → `/model`(권장 1순위, 추론 high) → `/skills`에서 dn- 13개 확인(꺼져 있으면 Enable)
 - 보안 스킬(선택): `$skill-installer security-best-practices` → 승인 → `/quit` → `codex`
 - 승인 창: python3·pytest·curl localhost·git add/commit·npm·pip은 "세션 동안 다시 묻지 않기". .git 쓰기도 세션 동안 허용
 - 승인을 실수로 거절했으면: `방금 거절은 실수야. 같은 명령을 다시 실행해.`

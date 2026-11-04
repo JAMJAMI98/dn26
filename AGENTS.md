@@ -68,7 +68,7 @@ docs/01_brief 02_requirements 03_interview 04_data 05_design 06_experiments 07_v
 
 ## 8. 스킬 (언제 쓰나)
 공통: `$dn-kickoff`(시작) `$dn-stack`(골격) `$dn-interview`(담당자 질문 3회) `$dn-data`(점검·설계 분석·결과 분석) `$dn-design`(G2) `$dn-build`(구현 루프) `$dn-verify`(검증) `$dn-wrap`(마무리)
-모듈(kickoff가 켠다): `$dn-optimize`(여러 해 중 선택) `$dn-model`(예측·분류·이상 탐지) `$dn-llm`(앱 안 LLM) `$dn-ui`(화면)
+모듈(kickoff가 켠다): `$dn-optimize`(여러 해 중 선택) `$dn-model`(예측·분류·이상 탐지) `$dn-llm`(앱 안 LLM) `$dn-ui`(화면) `$dn-report`(분석 리포트·대시보드)
 같은 절차를 두 번 반복하면 스킬 생성 기준 시각 전에 `$skill-creator`로 `.agents/skills/<과제>-<동작>/`에 과제 스킬 1개를 만들고 그 폴더만 `git add -f`. 만든 이유를 LOG D에 남긴다.
 
 ## 이 과제 고유 규칙 (20줄 이하, 사람이 읽는 문장으로. 이 파일이 AGENTS.kit.md로 깔렸으면 제출되지 않으니 docs/05 결정 표에 쓴다)

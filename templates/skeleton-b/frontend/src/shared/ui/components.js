@@ -52,14 +52,14 @@ export const ErrorBox = (message, action) => h("div", { className: "ui-state", r
 /** In-page confirm (never window.confirm). Resolves true/false. */
 export function ConfirmDialog(message, { confirmLabel = "확인", danger = false } = {}) {
   return new Promise((resolve) => {
-    const close = (v) => { overlay.remove(); resolve(v); };
-    const overlay = h("div", { className: "ui-dialog-backdrop", role: "dialog", "aria-modal": "true" },
+    const close = (v) => { backdrop.remove(); resolve(v); };
+    const backdrop = h("div", { className: "ui-dialog-backdrop", role: "dialog", "aria-modal": "true" },
       h("div", { className: "ui-dialog" },
         h("p", {}, message),
         h("div", { className: "ui-row-end" },
           Button("취소", { onClick: () => close(false) }),
           Button(confirmLabel, { variant: danger ? "danger" : "primary", onClick: () => close(true) }))));
-    document.body.append(overlay);
+    document.body.append(backdrop);
   });
 }
 
