@@ -16,7 +16,7 @@ description: 화면 명세를 쓰거나 화면을 구현·수정할 때 쓴다(�
 - 업로드·파일 선택창·저장창 없음(과제가 요구하면 예외: 그때는 크기 제한·형식 검증·오류 행 표시). 내보내기는 화면 표시·복사 또는 서버 저장.
 
 ## 3. 확인
-- `npm run typecheck` PASS, `npm run build` PASS.
+- `make test` PASS(A안 tsc, B안 node --check), A안은 `make build`도 PASS.
 - 사용자에게 미리보기에서 누를 순서 3~5단계를 준다(HUMAN_CHECK). 자동 브라우저 도구가 이미 있을 때만 스크린샷.
 
 ## 4. 수정 지시 받는 형식

@@ -18,7 +18,7 @@ codex
 - 전체화면 유지, 파일 탐색기·파일 선택창 열지 않기
 - Codex 업데이트 권유는 무시. 모델은 안내된 허용 모델만(Astra·Computer Use 금지)
 - 입력은 한 번에 **1000자**까지. 긴 담당자 답은 `답(1/2): …` `답(2/2): … 이제 반영해`로 나누거나, 새 탭에서 `cat > /tmp/a1.txt` → 붙여넣기 → Ctrl+D → `/tmp/a1.txt 읽고 docs/03에 반영해`
-- 터미널 붙여넣기 Ctrl+Shift+V. 붙여넣기가 막히면 짧게 직접 친다: A `AGENTS.md 읽고 $dn-kickoff` / B `너는 창 B. AGENTS.md 5절대로 $dn-interview`
+- 터미널 붙여넣기 Ctrl+Shift+V. 붙여넣기가 막히면 짧게 직접 친다: A `AGENTS.md 읽고 $dn-kickoff` / B `너는 창 B. AGENTS.md 5절대로 $dn-interview` (AGENTS.kit.md가 있으면 "AGENTS.md와 AGENTS.kit.md")
 - **시험 전날**: Chrome 비밀번호 저장·자동완성 끄기(팝업이 전체화면을 풀어 경고가 남는다). 신분증 곁에
 
 ## 2. 창 3개 (터미널 탭)
@@ -90,7 +90,7 @@ codex
 - 미리보기 안 뜸: 서버 터미널에 0.0.0.0:3000? → `curl -sI localhost:3000` 200? → Browser PORT 칸 3000? → 새로고침
 - 로그인 후 바로 튕김: 쿠키 차단 → Bearer 헤더 방식인지 확인
 - 커밋 실패(index.lock 등): 우회 금지, Codex가 준 명령을 내가 터미널에서 실행
-- 대화가 길어짐: `PLAN 상황판 갱신해.` → 새 세션 `AGENTS.md와 PLAN.md 읽고 이어서 해.`
+- 대화가 길어짐: `PLAN 상황판 갱신해.` → 새 세션 `AGENTS.md(AGENTS.kit.md가 있으면 그것도)와 PLAN.md 읽고 이어서 해.`
 - 골격 설치가 5분 넘게 안 됨: `B안으로 전환해.`
 
 ## 8. 도구 (`/tmp/dn/tools`, 각각 --demo)

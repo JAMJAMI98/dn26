@@ -2,7 +2,7 @@
 name: dn-stack
 description: 시작 직후 작업 폴더에 서비스 골격(폴더·서버·인증·작업·배포·테스트)을 깔 때 쓴다.
 ---
-# 골격 적용 (+10~30분, 창 A). 도메인 코드는 0줄, 과제가 정한 것이 있으면 그것이 우선
+# 골격 적용 (+10~25분, 창 A). 도메인 코드는 0줄, 과제가 정한 것이 있으면 그것이 우선
 
 ## 0. 선택 (최대 5분, 복사 전에 정한다)
 - `python3 -c "import fastapi,uvicorn"`; 없으면 `pip install fastapi "uvicorn[standard]" pydantic-settings sqlalchemy httpx pytest` (승인). "externally-managed-environment"로 거절되면 같은 명령에 `--user` → 그래도 안 되면 `--break-system-packages`로 한 번씩만 다시 시도(이 경우 `make setup PIP_FLAGS=…`도 같은 옵션). `npm view vite version` (승인).
@@ -14,7 +14,7 @@ description: 시작 직후 작업 폴더에 서비스 골격(폴더·서버·인
 - A안: `rsync -a --ignore-existing /tmp/dn/templates/skeleton-a/ ./ 2>/dev/null || cp -rn /tmp/dn/templates/skeleton-a/. ./` → `make setup`
 - B안: `rsync -a --ignore-existing /tmp/dn/templates/skeleton-b/ ./ 2>/dev/null || cp -rn /tmp/dn/templates/skeleton-b/. ./` → `make setup`(설치 없음, .env만 만든다)
 - (과제 파일은 덮어쓰지 않는다. cp의 -n 경고 문구는 무시)
-- **복사 직후 .gitignore 확인**: 과제에 .gitignore가 이미 있으면 골격 것이 안 깔린다. `.env` `runtime/` `backend/runtime/` `__pycache__/` `node_modules/` `frontend/dist/` 줄이 없으면 추가하고 `git status --short --ignored | grep -E "env|runtime"`로 무시되는지 본다(초기 비밀번호 파일이 커밋되면 안 된다).
+- **복사 직후 .gitignore 확인**: 과제에 .gitignore가 이미 있으면 골격 것이 안 깔린다. `.env` `runtime/` `backend/runtime/` `__pycache__/` `node_modules/` `frontend/dist/` `*.egg-info/` `.pytest_cache/` 줄이 없으면 추가하고 `git status --short --ignored | grep -E "env|runtime"`로 무시되는지 본다(초기 비밀번호 파일이 커밋되면 안 된다).
 - A를 복사한 뒤 B로 바꾸게 되면(도메인 코드를 쓰기 전에만): `rm -rf backend frontend Makefile Dockerfile .dockerignore` 후 B 복사.
 - `cp /tmp/dn/templates/sub/backend.AGENTS.md backend/AGENTS.md`, frontend도 같이. docs/·PLAN.md는 setup이 이미 깔았다.
 - 커밋 메시지에 출처를 밝힌다: `chore: 공개 키트 골격 적용(github.com/JAMJAMI98/dn26 skeleton-a|b, 인증·작업·배포, 도메인 코드 없음)`. HOW_TO_RUN에도 한 줄(업무 로직은 이번 과제에서 작성).
