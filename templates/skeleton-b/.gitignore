@@ -1,0 +1,5 @@
+.env
+runtime/
+backend/runtime/
+**/__pycache__/
+docs/evidence/.ev.lock

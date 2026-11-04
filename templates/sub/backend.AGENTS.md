@@ -21,6 +21,6 @@ domains(순수 함수 + 단위 테스트) → infrastructure(저장·적재) →
 - 비밀값은 환경변수만. .env.example에는 자리표시만.
 
 ## 테스트
-- `backend/tests/{domains,infrastructure,presentation,integration}` 계층과 같은 모양. pytest 표준 출력.
+- `backend/tests/{domains,infrastructure,presentation,integration}` 계층과 같은 모양. A안은 pytest, B안은 unittest(`make test`가 둘 다 처리). B안은 서드파티 패키지를 import하지 않는다(설치가 막혀서 고른 안이다).
 - 규칙 검사기는 규칙마다 일부러 깨뜨린 입력 1개로 잡히는지 확인. 회귀 테스트는 수정 전 실패를 먼저 본다.
 - domains가 바깥 계층을 import하지 않는지 검사하는 테스트 1개를 유지한다.

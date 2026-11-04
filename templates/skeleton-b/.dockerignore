@@ -1,0 +1,7 @@
+# allow-list: only what the image needs
+*
+!backend/app
+!frontend/index.html
+!frontend/src
+!data
+**/__pycache__
