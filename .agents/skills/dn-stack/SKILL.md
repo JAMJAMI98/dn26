@@ -10,7 +10,7 @@ description: 시작 직후 작업 폴더에 서비스 골격(폴더·서버·인
 - git: `git config user.name Codex; git config user.email codex@localhost`(이 저장소만). .git 쓰기 승인 창은 "세션 동안 허용".
 
 ## 1. 폴더 (루트 AGENTS 3절 구조 그대로)
-- **A안 골격이 키트에 있으면 그대로 복사**(검증된 범용 코드): `cp -rn /tmp/dn/templates/skeleton-a/. ./` (-n: 과제 파일을 덮어쓰지 않음) → `rm VERIFY.md` → 아래 5절 완료 기준만 확인하고 커밋. 2~4절은 골격이 없거나 B안일 때 만드는 명세다.
+- **A안 골격이 키트에 있으면 그대로 복사**(검증된 범용 코드): `rsync -a --ignore-existing /tmp/dn/templates/skeleton-a/ ./ 2>/dev/null || cp -rn /tmp/dn/templates/skeleton-a/. ./` (과제 파일을 덮어쓰지 않음. cp의 -n 경고 문구는 무시) → `rm VERIFY.md` → 아래 5절 완료 기준만 확인하고 커밋. 2~4절은 골격이 없거나 B안일 때 만드는 명세다.
 `cp /tmp/dn/templates/sub/backend.AGENTS.md backend/AGENTS.md`, frontend도 같이. docs/·PLAN.md는 setup이 이미 깔았다.
 
 ## 2. backend (A안)
